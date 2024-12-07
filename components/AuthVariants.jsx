@@ -15,8 +15,7 @@ export default AuthVariants;
 
 const styles = StyleSheet.create({
   formTextWrapper: {
-    width: "100%",
-    flex: 1,
+    display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     gap: 4,

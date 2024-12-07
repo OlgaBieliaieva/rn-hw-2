@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
@@ -13,24 +12,20 @@ import AuthInput from "../components/AuthInput";
 import MainButton from "../components/MainButton";
 import AuthVariants from "../components/AuthVariants";
 import BgImg from "../assets/images/bg-img.jpg";
-import AddIcon from "../assets/images/add.png";
 import { colors } from "../styles/global";
 
-const RegistrationScreen = () => {
-  const [login, setLogin] = useState("");
+const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit() {
     const credentials = {
-      login,
       email,
       password,
     };
     console.log(credentials);
 
-    Alert.alert(`Реєстрація успішна!`);
-    setLogin("");
+    Alert.alert(`Вітаємо!`);
     setEmail("");
     setPassword("");
   }
@@ -39,19 +34,9 @@ const RegistrationScreen = () => {
       <View style={styles.container}>
         <Background source={BgImg}>
           <View style={styles.contentContainer}>
-            <View style={styles.avatarWrapper}>
-              <Image source={AddIcon} style={styles.addBtn} />
-            </View>
-            <Text style={styles.formTitle}>Реєстрація</Text>
+            <Text style={styles.formTitle}>Увійти</Text>
 
             <View style={styles.formWrapper}>
-              <AuthInput
-                value={login}
-                onChangeText={setLogin}
-                placeholder="Логін"
-                autoCapitalize="words"
-                autoFocus={true}
-              />
               <AuthInput
                 value={email}
                 onChangeText={setEmail}
@@ -68,16 +53,19 @@ const RegistrationScreen = () => {
             </View>
 
             <MainButton action={handleSubmit}>
-              <Text style={styles.formBtnText}>Зареєструватися</Text>
+              <Text style={styles.formBtnText}>Увійти</Text>
             </MainButton>
-            <AuthVariants textVariant="Вже є акаунт?" textAction="Увійти" />
+            <AuthVariants
+              textVariant="Немає акаунту?"
+              textAction="Зареєструватися"
+            />
           </View>
         </Background>
       </View>
     </TouchableWithoutFeedback>
   );
 };
-export default RegistrationScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -86,31 +74,11 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     backgroundColor: colors.white,
-    height: 549,
+    height: 489,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingHorizontal: 16,
-    paddingTop: 92,
-    paddingBottom: 40,
-  },
-  avatarWrapper: {
-    width: 120,
-    height: 120,
-    backgroundColor: colors.lightGrayBg,
-    position: "absolute",
-    top: -60,
-    left: "50%",
-    transform: [{ translateX: "-38%" }],
-    borderRadius: 16,
-    zIndex: 2,
-  },
-  addBtn: {
-    position: "absolute",
-    width: 25,
-    height: 25,
-    bottom: 14,
-    right: -12,
-    zIndex: 3,
+    paddingTop: 32,
   },
   formTitle: {
     width: "100%",

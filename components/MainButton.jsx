@@ -13,8 +13,7 @@ export default MainButton;
 const styles = StyleSheet.create({
   formBtn: {
     backgroundColor: colors.orange,
-    paddingTop: 16,
-    paddingBottom: 16,
+    paddingVertical: 16,
     borderRadius: 100,
     marginBottom: 16,
   },

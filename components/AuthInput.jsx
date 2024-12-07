@@ -71,9 +71,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.lightGrayBorder,
     borderRadius: 8,
-    paddingLeft: 16,
+    paddingHorizontal: 16,
     paddingTop: 16,
-    paddingRight: 16,
     paddingBottom: 15,
     color: colors.black,
     fontFamily: "Roboto-Regular",
@@ -83,7 +82,6 @@ const styles = StyleSheet.create({
     borderColor: colors.orange,
   },
   inputPassLab: {
-    width: 72,
     height: 24,
     position: "absolute",
     bottom: 10,
